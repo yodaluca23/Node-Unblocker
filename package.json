@@ -19,7 +19,6 @@
   "scripts": {
     "start": "gatling app.js"
   },
-  "license": "AGPL-3.0"
   {
   "name": "simple-unblocker-server",
   "private": true,
