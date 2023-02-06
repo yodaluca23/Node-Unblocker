@@ -10,7 +10,7 @@ const app = express();
 const unblocker = Unblocker({
   requestMiddleware: [
     blacklist({
-      blockedDomains: ["pornhub.com"],
+      blockedDomains: ["pornhub.com", "kink.com", "YouJizz.com"],
       message: "The requested url is not permitted.",
     }),
   ],
