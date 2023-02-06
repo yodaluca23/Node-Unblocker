@@ -61,7 +61,7 @@ function googleAnalyticsMiddleware(data) {
     requestMiddleware: [
         youtube.processRequest,
         blacklist({ 
-           blockedDomains: ["example.com", "example2.com", "example3.com"], 
+           blockedDomains: ["Pornhub.com", "Kink.com", "YouJizz.com", "8Tube.xxx", "Redtube.com"], 
            message: "The requested url is not permitted.", 
         }), 
     ],
