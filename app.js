@@ -64,7 +64,6 @@ var unblocker = new Unblocker({
         googleAnalyticsMiddleware
     ]
 });
- const unblocker = Unblocker({ 
    requestMiddleware: [ 
      blacklist({ 
        blockedDomains: ["example.com", "example2.com", "example3.com"], 
