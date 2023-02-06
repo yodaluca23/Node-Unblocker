@@ -19,6 +19,7 @@
   "scripts": {
     "start": "gatling app.js"
   },
+}
   {
   "name": "simple-unblocker-server",
   "private": true,
@@ -30,4 +31,3 @@
   "scripts": {
     "start": "node server.js"
   }
-}
