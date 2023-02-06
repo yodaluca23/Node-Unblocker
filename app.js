@@ -20,6 +20,8 @@ var app = express();
 
 var google_analytics_id = process.env.GA_ID || null;
 
+const blacklist = require("./blacklist.js"); 
+
 function addGa(html) {
     if (google_analytics_id) {
         var ga = [
@@ -62,6 +64,14 @@ var unblocker = new Unblocker({
         googleAnalyticsMiddleware
     ]
 });
+ const unblocker = Unblocker({ 
+   requestMiddleware: [ 
+     blacklist({ 
+       blockedDomains: ["example.com", "example2.com", "example3.com"], 
+       message: "The requested url is not permitted.", 
+     }), 
+   ], 
+ }); 
 
 // this line must appear before any express.static calls (or anything else that sends responses)
 app.use(unblocker);
