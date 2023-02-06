@@ -57,18 +57,13 @@ function googleAnalyticsMiddleware(data) {
 }
 
  const unblocker = Unblocker({ 
-   requestMiddleware: [ 
-     blacklist({ 
-       blockedDomains: ["example.com", "example2.com", "example3.com"], 
-       message: "The requested url is not permitted.", 
-     }), 
-   ], 
- }); 
-
-var unblocker = new Unblocker({
     prefix: '/proxy/',
     requestMiddleware: [
-        youtube.processRequest
+        youtube.processRequest,
+        blacklist({ 
+           blockedDomains: ["example.com", "example2.com", "example3.com"], 
+           message: "The requested url is not permitted.", 
+        }), 
     ],
     responseMiddleware: [
         googleAnalyticsMiddleware
