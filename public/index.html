@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Node Unblocker</title>
-  <style>
-    body {
-      background-color: lightblue;
-      font-family: Arial, sans-serif;
-    }
+  <head>
+    <meta charset="utf-8">
+    <title>Node Unblocker</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+        h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
 
-    .container {
-      width: 500px;
-      margin: 100px auto;
-      text-align: center;
-    }
+  input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
+  button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Node Unblocker</h1>
+      <form>
+        <input type="text" id="urlInput" placeholder="Enter a website">
+        <button type="submit">Go</button>
+      </form>
+    </div>
+<p>Node Unblocker is a web proxy, similar to CGIProxy, PHProxy, or Glype, that allows users to evade filters and censorship and access blocked websites. </p>
+<p>It's designed to be extremely fast and compatible: It processes the data on-the-fly rather than buffering the entire response, and it only modifies URLs when necessary - relative ones will "just work". </p>
+<p>The Title is "Google" and the icon is the Google icon to evade suspicion from teachers! Also note that I am not the creator of this and all credit goes to the below.</p>
+<p>Node Unblocker is written in JavaScript with <a href="http://nodejs.org">node.js</a>. The source code is <a href="https://github.com/nfriedly/node-unblocker">available on github</a>.</p>
 
-    form {
-      margin-bottom: 50px;
-    }
+<p><a href="https://github.com/nfriedly/node-unblocker">Node Unblocker</a> by <a href="http://www.nfriedly.com/" title="Node.js developer and JavaScript Expert">Nathan Friedly</a></p>
 
-    input[type="text"] {
-      font-size: 1.2em;
-      padding: 10px;
-      width: 80%;
-    }
+<script>
+  const form = document.querySelector("form");
+  const urlInput = document.querySelector("#urlInput");
 
-    input[type="submit"] {
-      padding: 10px 20px;
-      font-size: 1.2em;
-    }
-
-    p {
-      margin-top: 50px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Node Unblocker</h1>
-    <form action="">
-      <input type="text" placeholder="Enter a website" id="urlInput">
-      <input type="submit" value="Go" onclick="submitForm(); return false;">
-    </form>
-    <p>Node Unblocker is a web proxy, similar to CGIProxy, PHProxy, or Glype, that allows users to evade filters and censorship and access blocked websites. </p>
-    <p>It's designed to be extremely fast and compatible: It processes the data on-the-fly rather than buffering the entire response, and it only modifies URLs when necessary - relative ones will "just work". </p>
-    <p>The Title is "Google" and the icon is the Google icon to evade suspicion from teachers! Also note that I am not the creator of this and all credit goes to the below.</p>
-    <p>Node Unblocker is written in JavaScript with <a href="http://nodejs.org">node.js</a>. The source code is <a href="https://github.com/nfriedly/node-unblocker">available on github</a>.</p>
-    <p><a href="https://github.com/nfriedly/node-unblocker">Node Unblocker</a> by <a href="http://www.nfriedly.com/" title="Node.js developer and JavaScript Expert">Nathan Friedly</a></p>
-  </div>
-  <script>
-    function submitForm() {
-      var urlInput = document.getElementById("urlInput");
-      var currentUrl = window.location.href.split('/')[2];
-      window.location.href = currentUrl + "/proxy/" + urlInput.value;
-    }
-  </script>
-</body>
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const url = urlInput.value;
+    window.location.href = `${window.location.origin}/proxy/${url}`;
+  });
+</script>
+  </body>
 </html>
