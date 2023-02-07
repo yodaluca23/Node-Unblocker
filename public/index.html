@@ -46,30 +46,27 @@
         <button type="submit">Go</button>
       </form>
     </div>
-<p>Node Unblocker is a web proxy, similar to CGIProxy, PHProxy, or Glype, that allows users to evade filters and censorship and access blocked websites. </p>
-<p>It's designed to be extremely fast and compatible: It processes the data on-the-fly rather than buffering the entire response, and it only modifies URLs when necessary - relative ones will "just work". </p>
-<p>The Title is "Google" and the icon is the Google icon to evade suspicion from teachers! Also note that I am not the creator of this and all credit goes to the below.</p>
-<p>Node Unblocker is written in JavaScript with <a href="http://nodejs.org">node.js</a>. The source code is <a href="https://github.com/nfriedly/node-unblocker">available on github</a>.</p>
 
-<p><a href="https://github.com/nfriedly/node-unblocker">Node Unblocker</a> by <a href="http://www.nfriedly.com/" title="Node.js developer and JavaScript Expert">Nathan Friedly</a></p>
+    <p>Node Unblocker is a web proxy, similar to CGIProxy, PHProxy, or Glype, that allows users to evade filters and censorship and access blocked websites. </p>
+    <p>It's designed to be extremely fast and compatible: It processes the data on-the-fly rather than buffering the entire response, and it only modifies URLs when necessary - relative ones will "just work". </p>
+    <p>The Title is "Google" and the icon is the Google icon to evade suspicion from teachers! Also note that I am not the creator of this and all credit goes to the below.</p>
+    <p>Node Unblocker is written in JavaScript with <a href="http://nodejs.org">node.js</a>. The source code is <a href="https://github.com/nfriedly/node-unblocker">available on github</a>.</p>
 
-<script>
-  const form = document.querySelector("form");
-  const urlInput = document.querySelector("#urlInput");
+    <p><a href="https://github.com/nfriedly/node-unblocker">Node Unblocker</a> by <a href="http://www.nfriedly.com/" title="Node.js developer and JavaScript Expert">Nathan Friedly</a></p>
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const url = urlInput.value;
-
-    // Check if the input is in the form of a URL
-    if (!/^https?:\/\//.test(url)) {
-      // If not, perform a DuckDuckGo search
-      window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
-    } else {
-      // If it is, use the input as is
-      window.location.href = `${window.location.origin}/proxy/${url}`;
-    }
-  });
+    <script>
+      const form = document.querySelector("form");
+      const urlInput = document.querySelector("#urlInput");
+  
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let url = urlInput.value;
+        let regex = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+        if (!regex.test(url)) {
+          url = "https://duckduckgo.com/?q=" + url.replace(/\s/g, "+");
+        }
+        window.location.href = `${window.location.origin}/proxy/${url}`;
+      });
 </script>
   </body>
 </html>
