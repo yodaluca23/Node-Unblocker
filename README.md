@@ -13,8 +13,9 @@ The original nodeunblocker.com is gone, but it's now easier than ever to deploy 
 This is my personal fork of [nFriedly](https://github.com/nfriedly)'s [NodeUnblocker.com](https://github.com/nfriedly/nodeunblocker.com). All rights go to him.</br>
 ### Changes
 1. Completly Redid the main website code and GUI (Thanks to [Open AI](https://www.openai.com)'s "[ChatGPT](https://chat.openai.com)").
-2. If the user inputs a non URL (detected with common TLD's) then it will redirect to a Google search of the users input.
-3. Clearified some wording in the ReadME and the main website.
+2. If the user inputs a non-URL (detected with common TLDs) then it will redirect to a Google search of the user's input.
+3. Changed tab title to "Google" and changed the Favicon to [Google's Favicon](https://www.google.com/favicon.ico).
+4. Clarified some wording in the ReadME and the main website.
 
 ## Now with YouTube support (sort of)
 
@@ -43,11 +44,11 @@ After that, it will be live on your computer and accessible from your computer a
 
 ## Running the website on ~~Heroku~~/Bluemix/Azure/AWS/Cyclic/Vercel/etc
 
-This project should be runnable without modification on many cloud providers. Clone/download the code and deploy it, or just click one of the buttons above. (I used to use heroku, but they have since updated changed their policies to not allow any proxies.)
+This project should be runnable without modification on many cloud providers. Clone/download the code and deploy it, or just click one of the buttons above. (I used to use Heroku, but they have since updated and changed their policies to not allow any proxies.)
 
 # About the project
 
-The the core of this repo has been extracted into a [standalone library](https://github.com/nfriedly/node-unblocker) to make it more flexible, but everything you need to run the website is right here.
+The core of this repo has been extracted into a [standalone library](https://github.com/nfriedly/node-unblocker) to make it more flexible, but everything you need to run the website is right here.
 
 This project is released under the terms of the [GNU Affero General Public License version 3](https://www.gnu.org/licenses/agpl-3.0.html).
 
