@@ -62,12 +62,12 @@
     event.preventDefault();
     const input = urlInput.value;
 
-    // Check if the input is in the form of a URL
-    if (!/^https?:\/\//.test(input)) {
+    // Check if the input contains a valid TLD extension
+    if (!/\.[a-z]{2,}$/i.test(input)) {
       // If not, perform a DuckDuckGo search
       window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(input.replace(/ /g, "+"))}`;
     } else {
-      // If it is, use the input as is
+      // If it does, use the input as the URL
       window.location.href = `${window.location.origin}/proxy/${encodeURIComponent(input)}`;
     }
   });
