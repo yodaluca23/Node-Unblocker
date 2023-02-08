@@ -68,7 +68,7 @@
       window.location.href = `${window.location.origin}/proxy?q=${encodeURIComponent(url)}`;
     } else {
       // If it is, use the input as is
-      window.location.href = `${window.location.origin}/proxy/${encodeURIComponent(url)}`;
+      window.location.href = `${window.location.origin}/proxy?url=${encodeURIComponent(url)}`;
     }
   });
 </script>
