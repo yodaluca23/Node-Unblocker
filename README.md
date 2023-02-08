@@ -1,19 +1,26 @@
-# nodeunblocker.com
+# Node Unblocker
 
 Evade internet censorship!
 
 The original nodeunblocker.com is gone, but it's now easier than ever to deploy your own copy.
 
-[![Deploy to Bluemix](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/nfriedly/nodeunblocker.com)
-[![Deploy to AWS](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/nfriedly/nodeunblocker.com)
+[![Deploy to Bluemix](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/yodaluca23/Node-Unblocker)
+[![Deploy to AWS](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/yodaluca23/Node-Unblocker)
 [![Deploy to Cyclic](https://deploy.cyclic.sh/button.svg)](https://deploy.cyclic.sh/)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnfriedly%2Fnodeunblocker.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyodaluca23%2Fnode-unblocker)
+
+## Fork Changes
+This is my personal fork of [nFriedly](https://github.com/nfriedly)'s [NodeUnblocker.com](https://github.com/nfriedly/nodeunblocker.com). All rights go to him.</br>
+### Changes
+1. Completly Redid the main website code and GUI (Thanks to [Open AI](https://www.openai.com)'s "[ChatGPT](https://chat.openai.com)").
+2. If the user inputs a non URL (detected with common TLD's) then it will redirect to a Google search of the users input.
+3. Clearified some wording in the ReadME and the main website.
 
 ## Now with YouTube support (sort of)
 
 I went ahead and activated the [youtube example](https://github.com/nfriedly/node-unblocker/blob/master/examples/youtube/youtube.js), it replaces youtube.com video pages with a custom page that just streams the video (but actually works). 
 
-To disable it just add `//` to the beginning of [this line of code in app.js](https://github.com/nfriedly/nodeunblocker.com/blob/5355bbfa8cfe2b5d2e6e5aae41ea21936a3be9a5/app.js#L59) like so:
+To disable it just add `//` to the beginning of [this line of code in app.js](https://github.com/yodaluca23/node-unblocker/blob/5355bbfa8cfe2b5d2e6e5aae41ea21936a3be9a5/app.js#L59) like so:
 
 ```js
 //        youtube.processRequest
@@ -22,7 +29,7 @@ To disable it just add `//` to the beginning of [this line of code in app.js](ht
 ## Running the website on your computer
 
 1. Install [node.js](http://nodejs.org/)
-2. [Download the code](https://github.com/nfriedly/nodeunblocker.com/archive/master.zip)
+2. [Download the code](https://github.com/yodaluca23/node-unblocker/archive/master.zip)
 3. Unzip it
 4. Open up a terminal/command line
 5. `cd` into the directory
@@ -34,13 +41,13 @@ package, which the `npm start` command calls automatically.)
 
 After that, it will be live on your computer and accessible from your computer at http://localhost:8080/ - accessing it from another computer is beyond the scope of this guide, but it is possible.
 
-## Running the website on ~~Heroku~~/Bluemix/Azure/AWS/etc
+## Running the website on ~~Heroku~~/Bluemix/Azure/AWS/Cyclic/Vercel/etc
 
-This project should be runnable without modification on many cloud providers. Clone/download the code and deploy it, or just click one of the buttons above. (I used to use heroku, but they have since updated changed their policies to not allow it.)
+This project should be runnable without modification on many cloud providers. Clone/download the code and deploy it, or just click one of the buttons above. (I used to use heroku, but they have since updated changed their policies to not allow any proxies.)
 
 # About the project
 
-The the core of the nodeunblocker.com has been extracted into a [standalone library](https://github.com/nfriedly/node-unblocker) to make it more flexible, but everything you need to run the website is right here.
+The the core of this repo has been extracted into a [standalone library](https://github.com/nfriedly/node-unblocker) to make it more flexible, but everything you need to run the website is right here.
 
 This project is released under the terms of the [GNU Affero General Public License version 3](https://www.gnu.org/licenses/agpl-3.0.html).
 
