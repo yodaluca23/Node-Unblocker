@@ -55,27 +55,14 @@
 <p style="text-align:center;"><a href="https://github.com/nfriedly/node-unblocker">Node Unblocker</a> by <a href="http://www.nfriedly.com/" title="Node.js developer and JavaScript Expert">Nathan Friedly</a></p>
 
 <script>
-    const currentUrl = window.location.href;
-    const host = new URL(currentUrl).host;
-    const proxy = "/proxy/";
+  const form = document.querySelector("form");
+  const urlInput = document.querySelector("#urlInput");
 
-    function isUrl(str) {
-        try {
-            new URL(str);
-            return true;
-        } catch (error) {
-            return false;
-        }
-    }
-
-    function submitForm() {
-        const input = document.getElementById("input").value;
-        if (isUrl(input)) {
-            window.location.href = host + proxy + input;
-        } else {
-            window.location.href = host + proxy + "https://duckduckgo.com/?q=" + input;
-        }
-    }
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const url = urlInput.value;
+    window.location.href = `${window.location.origin}/proxy/${url}`;
+  });
 </script>
   </body>
 </html>
