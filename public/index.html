@@ -60,15 +60,15 @@
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const url = urlInput.value;
+    const input = urlInput.value;
 
     // Check if the input is in the form of a URL
-    if (!/^https?:\/\//.test(url)) {
+    if (!/^https?:\/\//.test(input)) {
       // If not, perform a DuckDuckGo search
-      window.location.href = `${window.location.origin}/proxy/?search=${encodeURIComponent(url)}`;
+      window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(input.replace(/ /g, "+"))}`;
     } else {
       // If it is, use the input as is
-      window.location.href = `${window.location.origin}/proxy/?url=${encodeURIComponent(url)}`;
+      window.location.href = `${window.location.origin}/proxy/${encodeURIComponent(input)}`;
     }
   });
 </script>
