@@ -65,7 +65,7 @@
     // Check if the input contains a valid TLD extension
     if (!/\.[a-z]{2,}$/i.test(input)) {
       // If not, perform a DuckDuckGo search
-      window.location.href = `${window.location.origin}/proxy/duckduckgo.com/?q=${encodeURIComponent(input.replace(/ /g, "+"))}`;
+      window.location.href = `${window.location.origin}/proxy/duckduckgo.com/?q=${encodeURIComponent}`;
     } else {
       // If it does, use the input as the URL
       window.location.href = `${window.location.origin}/proxy/${encodeURIComponent(input)}`;
