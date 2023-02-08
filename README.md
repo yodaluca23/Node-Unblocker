@@ -15,7 +15,8 @@ This is my personal fork of [nFriedly](https://github.com/nfriedly)'s [NodeUnblo
 1. Completly Redid the main website code and GUI (Thanks to [Open AI](https://www.openai.com)'s "[ChatGPT](https://chat.openai.com)").
 2. If the user inputs a non-URL (detected with common TLDs) then it will redirect to a Google search of the user's input.
 3. Changed tab title to "Google" and changed the Favicon to [Google's Favicon](https://www.google.com/favicon.ico).
-4. Clarified some wording in the ReadME and the main website.
+4. Enabled the [BlackList Example](https://github.com/nfriedly/node-unblocker/tree/master/examples/blacklist) with a list of adult content flagged sites, and advertisement sites.
+5. Clarified some wording in the ReadME and the main website.
 
 ## Now with YouTube support (sort of)
 
