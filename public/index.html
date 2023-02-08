@@ -61,7 +61,15 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const url = urlInput.value;
-    window.location.href = `${window.location.origin}/proxy/${url}`;
+
+    // Check if the input is in the form of a URL
+    if (!/^https?:\/\//.test(url)) {
+      // If not, perform a DuckDuckGo search
+      window.location.href = `${window.location.origin}/proxy?q=${encodeURIComponent(url)}`;
+    } else {
+      // If it is, use the input as is
+      window.location.href = `${window.location.origin}/proxy/${encodeURIComponent(url)}`;
+    }
   });
 </script>
   </body>
